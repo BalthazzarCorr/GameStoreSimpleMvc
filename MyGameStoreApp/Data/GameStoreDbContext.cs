@@ -21,6 +21,12 @@
        protected override void OnModelCreating(ModelBuilder builder)
        {
           builder.Entity<User>().HasIndex(u => u.Email).IsUnique();
+
+          builder.Entity<Order>().HasKey(o => new {o.UserId, o.GameId});
+
+          builder.Entity<Order>().HasOne(o => o.User).WithMany(u => u.Orders).HasForeignKey(u => u.UserId);
+
+          builder.Entity<Order>().HasOne(o => o.Game).WithMany(u => u.Orders).HasForeignKey(u => u.GameId);
        }
 
     }

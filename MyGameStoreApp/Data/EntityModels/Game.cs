@@ -1,6 +1,7 @@
 ﻿namespace MyGameStoreApp.Data.EntityModels
 {
    using System;
+   using System.Collections.Generic;
    using System.ComponentModel.DataAnnotations;
 
    public class Game
@@ -32,5 +33,7 @@
       public string Description { get; set; }
 
       public DateTime ReleaseDate { get; set; }
+
+      public List<Order> Orders { get; set; } = new List<Order>();
    }
 }

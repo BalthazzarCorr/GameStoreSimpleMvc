@@ -34,7 +34,7 @@
          // if error -> send error (display)
          // save to db 
          // redirect
-         this.ViewModel
+
 
          if (model.Password != model.ConfirmPassword || !this.IsValidModel(model))
          {

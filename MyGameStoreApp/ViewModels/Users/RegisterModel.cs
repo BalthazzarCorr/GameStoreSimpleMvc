@@ -1,6 +1,7 @@
 ﻿namespace MyGameStoreApp.ViewModels.Users
 {
    using Infrastructure.Validation;
+   using Infrastructure.Validation.Users;
 
    public class RegisterModel
     {

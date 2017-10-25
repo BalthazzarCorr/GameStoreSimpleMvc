@@ -2,6 +2,7 @@
 {
    using System.Linq;
    using Data;
+   using Data.EntityModels;
    using SimpleMvc.Framework.Controllers;
 
    public abstract class BaseController : Controller
@@ -14,6 +15,7 @@
          this.ViewModel["show-error"] = "none";
       }
 
+      protected User Profile { get; private set; }
 
       protected void ShowError(string error)
       {
@@ -31,13 +33,13 @@
             this.ViewModel["userDisplay"] = "flex";
             using (var db = new GameStoreDbContext())
             {
-               var isAdmin = db.Users.Any(u => u.Email == this.User.Name && u.IsAdmin);
+               this.Profile = db.Users.First(u => u.Email == this.User.Name);
 
 
-               if (isAdmin)
+               if (this.Profile.IsAdmin)
                {
                   this.ViewModel["userDisplay"] = "none";
-                  this.ViewModel["adminDisplay"] = "block";
+                  this.ViewModel["adminDisplay"] = "flex";
                }
             }
 
