@@ -2,7 +2,7 @@
 {
    using SimpleMvc.Framework.Attributes.Validation;
 
-   public class VideoAttribute: PropertyValidationAttribute
+   public class VideoIdAttribute: PropertyValidationAttribute
 
    {
       public override bool IsValid(object value)

@@ -6,33 +6,30 @@
    using SimpleMvc.Framework.Attributes.Validation;
 
 
-   public class AddGameAdminModel
+   public class GameAdminModel
    {
-      public int Id { get; set; }
-
       [Required]
       [Title]
       public string Title { get; set; }
-
-      [NumberRange(0, double.MaxValue)]
-      public decimal Price { get; set; }
-
-      //in GB
-      [NumberRange(0, double.MaxValue)]
-      public double Size { get; set; }
-
-      [Required]
-      [Video]
-      public string VideoId { get; set; }
-
-      [Thumbnail]
-      public string ThumbnailUrl { get; set; }
 
       [Required]
       [Description]
       public string Description { get; set; }
 
-      public DateTime ReleaseDate { get; set; }
+      [ThumbnailUrl]
+      public string ThumbnailUrl { get; set; }
 
+      [NumberRange(0, double.MaxValue)]
+      public decimal Price { get; set; }
+
+      [NumberRange(0, double.MaxValue)]
+      public double Size { get; set; }
+
+      [Required]
+      [VideoId]
+      public string VideoId { get; set; }
+
+      public DateTime ReleaseDate { get; set; }
    }
 }
+

@@ -2,7 +2,7 @@
 {
    using SimpleMvc.Framework.Attributes.Validation;
 
-   public class ThumbnailAttribute : PropertyValidationAttribute
+   public class ThumbnailUrlAttribute : PropertyValidationAttribute
    {
       public override bool IsValid(object value)
       {

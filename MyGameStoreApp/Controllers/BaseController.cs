@@ -23,7 +23,7 @@
          this.ViewModel["error"] = error;
       }
 
-      protected override void  InitializeController()
+      protected override void InitializeController()
       {
          base.InitializeController();
 
@@ -31,6 +31,7 @@
          {
             this.ViewModel["anonymousDisplay"] = "none";
             this.ViewModel["userDisplay"] = "flex";
+
             using (var db = new GameStoreDbContext())
             {
                this.Profile = db.Users.First(u => u.Email == this.User.Name);
@@ -42,9 +43,9 @@
                   this.ViewModel["adminDisplay"] = "flex";
                }
             }
-
-
          }
       }
+
+      protected bool IsAdmin => this.User.IsAuthenticated && this.Profile.IsAdmin;
    }
 }

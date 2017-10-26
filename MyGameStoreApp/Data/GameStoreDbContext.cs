@@ -15,7 +15,7 @@
        protected override void OnConfiguring(DbContextOptionsBuilder builder)
        {
           builder
-            .UseSqlServer("Server=.;Database=MyGameStoreDb;Integrated security=True;");
+            .UseSqlServer(@"Server=.\SQL;Database=MyGameStoreDb;Integrated security=True;");
        }
 
        protected override void OnModelCreating(ModelBuilder builder)
